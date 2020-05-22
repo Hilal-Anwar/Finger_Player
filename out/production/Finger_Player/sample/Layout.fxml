@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="pane" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="423.0" prefWidth="754.0" stylesheets="@StylePlayer.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <StackPane fx:id="stack" prefHeight="423.0" prefWidth="754.0">
+      <ImageView fx:id="Welcome" fitHeight="419.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+         <image>
+            <Image url="@_photo_photo-shop-11-1.jpg" />
+         </image>
+      </ImageView>
+        <MediaView fx:id="Screen" fitHeight="423.0" fitWidth="754.0" focusTraversable="true" onDragEntered="#dragPlay" onMouseMoved="#Show" StackPane.alignment="CENTER" />
+      <Button id="cross" fx:id="cross" alignment="CENTER" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="58.0" stylesheets="@StylePlayer.css" text="X" textFill="WHITE" visible="false" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Button>
+    </StackPane>
+    <AnchorPane fx:id="pane" layoutX="-1.0" layoutY="286.0" onMouseMoved="#Show" prefHeight="139.0" prefWidth="755.0" visible="false" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0">
+        <Label fx:id="stopWatch" alignment="CENTER" layoutX="28.0" layoutY="26.0" prefHeight="30.0" prefWidth="74.0" text="--:--" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+        <Label fx:id="TotalTime" alignment="CENTER" layoutX="679.0" layoutY="26.0" prefHeight="30.0" prefWidth="74.0" text="--:--" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+        <AnchorPane fx:id="mediaController" disable="true" layoutX="163.5" layoutY="29.0" prefHeight="88.0" prefWidth="427.0" style="-fx-background-color: #585858; -fx-background-radius: 50; -fx-border-color: white; -fx-border-radius: 50; -fx-border-width: 2;">
+            <Button id="sound" fx:id="sound" layoutX="7.0" layoutY="22.0" mnemonicParsing="false" onAction="#muteClicked" prefHeight="44.0" prefWidth="31.0">
+                <graphic>
+                    <ImageView fx:id="soundIcon" fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@less.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button id="forward" fx:id="ForwardButt" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="13.0" mnemonicParsing="false" onAction="#forwardAction" prefHeight="56.0" prefWidth="62.0" stylesheets="@StylePlayer.css">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@forward.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button id="backward" fx:id="BackButt" alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="13.0" mnemonicParsing="false" onAction="#backwardAction" prefHeight="56.0" prefWidth="62.0" stylesheets="@StylePlayer.css">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@Backward.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button id="start" fx:id="start" alignment="CENTER" contentDisplay="CENTER" layoutX="222.0" layoutY="13.0" mnemonicParsing="false" onAction="#setAction" prefHeight="56.0" prefWidth="62.0" stylesheets="@StylePlayer.css">
+                <graphic>
+                    <ImageView fx:id="playIcon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@play.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <JFXSlider id="slider" fx:id="volumeSlider" layoutX="54.0" layoutY="24.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#volumeController" onMouseDragged="#volumeController" prefHeight="37.0" prefWidth="110.0" value="30.0" />
+            <Button id="stop" fx:id="stop" alignment="CENTER" contentDisplay="CENTER" layoutX="337.0" layoutY="13.0" mnemonicParsing="false" onAction="#setAction" prefHeight="56.0" prefWidth="60.0" stylesheets="@StylePlayer.css">
+                <graphic>
+                    <ImageView id="stopIcon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@stop.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+        </AnchorPane>
+      <JFXButton id="open" fx:id="browse" layoutX="13.0" layoutY="75.0" onAction="#Browse" ripplerFill="BLACK" style="-fx-background-color: transparent; -fx-border-radius: 50; -fx-border-color: white; -fx-background-radius: 50; -fx-border-width: 1.5;" stylesheets="@StylePlayer.css" text="Open" textFill="WHITE" />
+      <JFXButton id="about" fx:id="about" layoutX="70.0" layoutY="75.0" onAction="#About" ripplerFill="BLACK" style="-fx-background-color: transparent; -fx-border-radius: 50; -fx-border-color: white; -fx-background-radius: 50; -fx-border-width: 1.5;" stylesheets="@StylePlayer.css" text="About" textFill="WHITE" />
+      <Button fx:id="fullScreenButton" layoutX="684.0" layoutY="75.0" mnemonicParsing="false" onAction="#fullScreenAction" prefHeight="20.0" prefWidth="24.0" style="-fx-background-radius: 0;">
+         <graphic>
+            <ImageView id="fullScreen" fx:id="fullScreenIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@FullScreen.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <JFXSlider id="my-slider" fx:id="Slider" disable="true" layoutX="37.0" layoutY="2.0" onMouseClicked="#SliderClicked" onMouseDragged="#SliderClicked" onMouseEntered="#showTip" onMouseExited="#HideTip" onMouseMoved="#SlideTip" prefHeight="8.0" prefWidth="680.0" value="-2.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="38.0" />
+    </AnchorPane>
+   <Label fx:id="tip" alignment="CENTER" layoutX="13.0" layoutY="258.0" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #ffebcd; -fx-border-color: black;" text="Label" visible="false">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font></Label>
+</AnchorPane>

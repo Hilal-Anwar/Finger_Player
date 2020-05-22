@@ -1,0 +1,67 @@
+
+.button{
+    -fx-background-color: transparent;
+}
+.button:hover{
+    -fx-border-color: white;
+    -fx-border-radius:50px;
+    -fx-border-width: 1.5;
+}
+.button:pressed{
+-fx-opacity:0.5
+}
+#sound{
+    -fx-background-color: transparent;
+}
+#pane {
+    -fx-background-color:black;
+}
+
+#title_bar {
+    -fx-background-color: rgba(0, 0, 0, 0.74);
+}
+.jfx-slider > .track {
+    -fx-pref-height: 3;
+    -fx-background-color: gray;
+}
+.jfx-slider > .thumb {
+    -fx-padding: 5;
+    -fx-border-color:white;
+    -fx-border-radius:50%;
+    -fx-border-width:4;
+    -fx-background-color: gray;
+}
+/* Styling the filled track */
+.jfx-slider > .colored-track {
+    -fx-background-color: white;
+}
+
+/* Styling the animated thumb */
+.jfx-slider > .animated-thumb {
+    -fx-background-color: white;
+}
+#my-slider > .animated-thumb{
+-fx-background-color: transparent;
+}
+#my-slider .slider-value{
+-fx-fill: transparent;
+-fx-stroke:transparent;
+}
+/* Styling the slider value text inside animated thumb */
+.jfx-slider .slider-value {
+    -fx-fill: purple;
+    -fx-stroke: purple;
+}
+#cross{
+-fx-border-color:transparent;
+-fx-background-color:transparent;
+-fx-text-fill:transparent;
+-fx-background-radius:0;
+-fx-border-radius:0;
+}
+#cross:hover{
+-fx-background-color:red;
+-fx-text-fill:white;
+-fx-background-radius:0;
+-fx-border-radius:0;
+}
